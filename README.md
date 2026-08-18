@@ -53,3 +53,72 @@ Booking policy:
 
 ## Important
 The beat cards are placeholders until you have beat names, audio, artwork, lease prices, and payment links.
+
+
+## Beat player upgrade
+The Beats section now works like a compact embedded beat-store player:
+- Play/pause one beat at a time
+- Scrubbable audio progress bar
+- Current time / duration
+- Beat title, BPM, key, lease price
+- Lease button per beat
+- Responsive mobile layout
+
+### Add beat previews
+Drop tagged MP3 previews into `assets/audio/`.
+The default filenames are:
+- `beat-01-preview.mp3`
+- `beat-02-preview.mp3`
+- `beat-03-preview.mp3`
+
+Then edit the beat title, BPM, key, and lease price in `index.html`.
+Put each Square payment link in `script.js` under the relevant `leaseUrl`.
+
+
+## 10-beat store
+The Beat Store is now generated from one editable `CONFIG.beats` list in `script.js`.
+
+For each beat you can edit:
+- `title`
+- `producer`
+- `bpm`
+- `key`
+- `price`
+- `audio`
+- `cover`
+- `leaseUrl`
+
+This means you can swap any of the 10 beats without rewriting HTML.
+
+### Exclusive beats
+Set `exclusiveContactUrl` near the top of `script.js` to your Instagram DM/contact page.
+The site includes a PRIVATE CATALOG section:
+"Not every beat makes it to the store..."
+
+### Beat files
+Tagged MP3 previews go in:
+`assets/audio/`
+
+Optional cover art goes in:
+`assets/beats/`
+
+
+## Booking-link update
+All BOOK / BOOK NOW / recording CTA links now go directly to the Square Appointments service-selection page:
+
+https://book.squareup.com/appointments/fmq60xo7tefxn9/location/LDASSRJMBXEFB/services?buttonTextColor=ffffff&color=000000&locale=en&referrer=so&team_member_id=TMlT9jP4nBm4KwH1
+
+## Private beat catalog note
+The large exclusive-beats section was replaced with a compact message directly under the beat player:
+"MORE EXCLUSIVE BEATS ARE IN THE VAULT. Contact jayy.wav directly to hear private production not listed on the site."
+
+
+## Live Payhip connection
+Beat 01 is now connected to Payhip:
+- Title: vennie [plugg]
+- BPM: 151
+- Producer: @_jayy.wav
+- Lease price: $50
+- Checkout: https://payhip.com/b/d0PDW
+
+The LEASE button for Beat 01 opens Payhip, where Square handles payment and Payhip delivers the purchased file.
