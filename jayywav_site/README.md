@@ -150,3 +150,14 @@ The Recording booking section now has three direct contact buttons for availabil
 Displayed contact details:
 - Phone: (678) 551-5333
 - Instagram: @_jayy.wav
+
+
+## Hero + same-day language update
+Hero headline changed from:
+"MAKE THE RECORD. MAKE IT HIT."
+
+to:
+"RECORD WITH JAYY.WAV"
+
+Booking policy now explicitly says:
+"Same-day sessions are first come, first serve and are not guaranteed."
