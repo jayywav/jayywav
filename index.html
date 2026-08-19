@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="jayy.wav — Atlanta recording engineer, mixing & mastering, and beat leases." />
+  <title>jayy.wav — Recording • Mixing • Beats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">jayy.wav</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">MENU</button>
+    <nav class="nav" aria-label="Primary">
+      <a href="#recording">Recording</a>
+      <a href="#mixing">Mixing</a>
+      <a href="#beats">Beats</a>
+      <a href="#policies">Policies</a>
+    </nav>
+    <a class="btn btn-small desktop-book" href="#request">REQUEST SESSION</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">ATLANTA, GA • RECORDING / MIXING / PRODUCTION</p>
+          <h1>RECORD WITH<br><span>JAYY.WAV</span></h1>
+          <p class="lede">Professional recording sessions, mix & mastering, and original production by jayy.wav.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#request">REQUEST A SESSION</a>
+            <a class="btn btn-ghost" href="#beats">BROWSE BEATS</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <span class="micro">CURRENT SERVICES</span>
+          <div class="hero-service"><b>Recording</b><span>2–4 hour sessions</span></div>
+          <div class="hero-service"><b>Mix + Master</b><span>Remote delivery</span></div>
+          <div class="hero-service"><b>Beat Leases</b><span>Original production</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recording">
+      <div class="booking-process">
+        <div class="booking-process-head">
+          <p class="eyebrow">ATLANTA, GA</p>
+          <h3>HOW BOOKING WORKS</h3>
+        </div>
+
+        <div class="booking-process-grid">
+          <div>
+            <p>Choose your session length and send your preferred date and time below. <strong>This is a request — not a confirmed appointment.</strong></p>
+            <p>Booking <strong>1–2 days in advance is strongly recommended</strong> for the best availability. <strong>Same-day sessions are first come, first serve and are not guaranteed.</strong></p>
+          </div>
+
+          <div>
+            <p><strong>No deposit is collected until studio availability is confirmed.</strong> If your requested time is unavailable, you’ll be contacted with the closest available options.</p>
+            <p>Once a studio and time are confirmed, you’ll receive the private <strong>$100 deposit link</strong>. Your session is locked in after that deposit is paid.</p>
+            <div class="extension-note">
+              <strong>NEED MORE TIME?</strong>
+              <p>Session extensions are <strong>$80/hour</strong> and are booked in full-hour increments, subject to studio availability. If another session is booked immediately after yours, an extension may not be available.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <a class="btn" href="#request">SEND A SESSION REQUEST</a>
+          <a class="btn btn-ghost" href="sms:6785515333">SAME-DAY? TEXT ME</a>
+        </div>
+        <p class="booking-small">Same-day sessions are first come, first serve and are not guaranteed. You can also DM @_jayy.wav on Instagram for immediate availability.</p>
+      </div>
+
+
+      <section class="request-panel" id="request">
+        <div class="request-copy">
+          <p class="eyebrow">SESSION REQUEST</p>
+          <h3>WHEN DO YOU WANT TO RECORD?</h3>
+          <p>Send your preferred time and a backup option. I’ll check studio availability and contact you before any deposit is collected.</p>
+        </div>
+
+        <form class="request-form" id="sessionRequestForm">
+          <div class="form-grid">
+            <label>
+              <span>Name / Artist Name</span>
+              <input id="requestName" name="name" type="text" required placeholder="Your name or artist name">
+            </label>
+
+            <label>
+              <span>Your Phone Number</span>
+              <input id="requestPhone" name="phone" type="tel" required placeholder="(###) ###-####">
+            </label>
+
+            <label>
+              <span>Session Length</span>
+              <select id="requestLength" name="length" required>
+                <option value="">Choose a session</option>
+                <option value="2 Hours — $160">2 Hours — $160</option>
+                <option value="3 Hours — $225">3 Hours — $225</option>
+                <option value="4 Hours — $300">4 Hours — $300</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Preferred Date</span>
+              <input id="requestDate" name="date" type="date" required>
+            </label>
+
+            <label>
+              <span>Preferred Start Time</span>
+              <input id="requestTime" name="time" type="time" required>
+            </label>
+
+            <label>
+              <span>Backup Date</span>
+              <input id="backupDate" name="backupDate" type="date">
+            </label>
+
+            <label>
+              <span>Backup Start Time</span>
+              <input id="backupTime" name="backupTime" type="time">
+            </label>
+
+            <label class="form-wide">
+              <span>Anything I should know?</span>
+              <textarea id="requestNotes" name="notes" rows="4" placeholder="Number of songs, special requests, etc."></textarea>
+            </label>
+          </div>
+
+          <div class="request-disclaimer">
+            <strong>THIS DOES NOT CONFIRM YOUR SESSION.</strong>
+            <span>I’ll verify studio availability first. Once your time is approved, I’ll send you the private $100 deposit link to lock it in.</span>
+          </div>
+
+          <div class="request-actions">
+            <button class="btn" type="submit">TEXT SESSION REQUEST</button>
+            <a class="btn btn-ghost" href="https://www.instagram.com/_jayy.wav/" target="_blank" rel="noopener">DM ON INSTAGRAM</a>
+          </div>
+        </form>
+      </section>
+
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">RECORDING</p>
+          <h2>REQUEST A SESSION</h2>
+        </div>
+        <p class="section-intro">Studio time + hands-on engineering. Choose the session length you want, then send your preferred date and time for availability.</p>
+      </div>
+
+      <div class="cards session-grid">
+        <article class="card">
+          <img src="assets/session-2hr.png" alt="2 Hour Session" />
+          <div class="card-body">
+            <div class="card-topline"><h3>2 HOUR SESSION</h3><strong>$160</strong></div>
+            <p>Best for focused tracking, singles, punch-ins, and quick sessions.</p>
+            <a class="text-link package-request" href="#request" data-package="2 Hours — $160">REQUEST 2 HOURS →</a>
+          </div>
+        </article>
+
+        <article class="card featured">
+          <div class="badge">POPULAR</div>
+          <img src="assets/session-3hr.png" alt="3 Hour Session" />
+          <div class="card-body">
+            <div class="card-topline"><h3>3 HOUR SESSION</h3><strong>$225</strong></div>
+            <p>More room to create, track, revise, and leave with a stronger session.</p>
+            <a class="text-link package-request" href="#request" data-package="3 Hours — $225">REQUEST 3 HOURS →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/session-4hr.png" alt="4 Hour Session" />
+          <div class="card-body">
+            <div class="card-topline"><h3>4 HOUR SESSION</h3><strong>$300</strong></div>
+            <p>For longer sessions, multiple songs, deeper vocal work, or creative development.</p>
+            <a class="text-link package-request" href="#request" data-package="4 Hours — $300">REQUEST 4 HOURS →</a>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <section class="split-section" id="mixing">
+      <div class="split-media mix-art" role="img" aria-label="Mixing and mastering service"></div>
+      <div class="split-copy">
+        <p class="eyebrow">ANYWHERE • REMOTE</p>
+        <h2>MIX & MASTER</h2>
+        <p class="big-copy">Send the stems. Get back a polished, release-ready record.</p>
+        <ul class="clean-list">
+          <li>Mix + master for one song</li>
+          <li>Up to 2 revisions included</li>
+          <li>3–5 business day standard turnaround</li>
+          <li>Digital delivery</li>
+        </ul>
+        <div class="price-row"><span>STARTING AT</span><strong>$100 / SONG</strong></div>
+        <a class="btn disabled-link" href="#" data-placeholder="mix">ORDER MIX + MASTER</a>
+        <p class="helper">Add your Square payment link in <code>script.js</code> when the item is live.</p>
+      </div>
+    </section>
+
+    <section class="section dark-panel" id="beats">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">PRODUCTION</p>
+          <h2>BEAT STORE</h2>
+        </div>
+        <p class="section-intro">Preview original production by jayy.wav. Press play, scrub through the track, then choose a lease when you find the one.</p>
+      </div>
+
+      <div class="beat-store" id="beatStore">
+        <div class="beat-store-head" aria-hidden="true">
+          <span></span>
+          <span>TRACK</span>
+          <span>INFO</span>
+          <span>PRICE</span>
+          <span></span>
+        </div>
+        <!-- Beat rows are generated from the BEATS array in script.js -->
+      </div>
+      <p class="vault-note">
+        <strong>MORE EXCLUSIVE BEATS ARE IN THE VAULT.</strong>
+        Contact jayy.wav directly to hear private production not listed on the site.
+      </p>
+    </section>
+
+    <section class="info-grid section">
+      <article>
+        <p class="eyebrow">STUDIO INFORMATION</p>
+        <h2>ATLANTA SESSIONS</h2>
+        <p>Sessions are held at select professional recording studios throughout the Atlanta area. Studio selection is based on availability and your session needs. Your exact studio location, address, and arrival instructions will be confirmed after booking.</p>
+      </article>
+      <article>
+        <p class="eyebrow">BEFORE YOUR SESSION</p>
+        <h2>COME READY.</h2>
+        <p>Have your beats, instrumentals, references, and session files downloaded and ready before arriving. Your reserved time begins at the scheduled start time. Additional studio time is subject to availability.</p>
+      </article>
+    </section>
+
+    <section class="section policy" id="policies">
+      <p class="eyebrow">GOOD TO KNOW</p>
+      <h2>BOOKING POLICIES</h2>
+      <div class="policy-grid">
+        <article>
+          <h3>Studio Availability</h3>
+          <p>All bookings are subject to final studio availability. If your requested time is unavailable, you’ll be contacted with the closest available options. If an alternative time can’t be agreed upon, your deposit will be refunded.</p>
+        </article>
+        <article>
+          <h3>Deposits</h3>
+          <p>A $100 deposit is required to reserve your session. Once the studio and session time are confirmed, deposits are non-refundable and are applied toward your remaining session balance.</p>
+        </article>
+        <article>
+          <h3>Rescheduling</h3>
+          <p>Please provide at least 24 hours’ notice to reschedule. Late cancellations and no-shows result in the loss of the deposit.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">READY?</p>
+      <h2>LET’S MAKE SOMETHING.</h2>
+      <a class="btn btn-light" href="#request">REQUEST A SESSION</a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a class="brand" href="#top">jayy.wav</a>
+      <p>Recording • Mixing • Production<br>Atlanta, GA</p>
+    </div>
+    <div class="footer-links">
+      <a href="#recording">Recording</a>
+      <a href="#mixing">Mixing</a>
+      <a href="#beats">Beats</a>
+      <a href="#policies">Policies</a>
+    </div>
+    <div>
+      <p class="eyebrow">STAY IN THE LOOP</p>
+      <p>New beats, studio availability, and exclusive offers.</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> jayy.wav</p>
+  </footer>
+
+  <a class="mobile-cta" href="#request">REQUEST SESSION</a>
+  <script src="script.js"></script>
+</body>
+</html>
