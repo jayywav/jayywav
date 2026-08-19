@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Confirmation Message — jayy.wav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .tool-shell{min-height:100vh;padding:60px 20px;background:#080808}
+    .tool-wrap{width:min(860px,100%);margin:auto}
+    .tool-wrap h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2.8rem,8vw,6rem);line-height:.9;letter-spacing:-.06em;margin:.2em 0}
+    .tool-note{color:#888;max-width:680px}
+    .mode-row{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+    .mode-btn{border:1px solid #3a3a3a;background:#0f0f0f;color:#fff;padding:11px 14px;font-weight:800;font-size:.72rem;letter-spacing:.09em;cursor:pointer}
+    .mode-btn.active{background:#fff;color:#000;border-color:#fff}
+    .tool-form{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;border:1px solid #2b2b2b;background:#0d0d0d;padding:26px}
+    .tool-form label{display:grid;gap:7px}
+    .tool-form label span{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa}
+    .tool-form input,.tool-form select,.tool-form textarea{width:100%;background:#111;border:1px solid #343434;color:#fff;padding:13px 14px;font:inherit}
+    .full{grid-column:1/-1}
+    .tool-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .tool-actions .btn{width:100%}
+    .preview{grid-column:1/-1;border-top:1px solid #252525;padding-top:18px}
+    .preview span{font-size:.65rem;font-weight:800;letter-spacing:.12em;color:#777}
+    .preview pre{white-space:pre-wrap;background:#090909;border:1px solid #252525;padding:16px;color:#ddd;font:inherit;font-size:.86rem;line-height:1.55}
+    .copy-status{grid-column:1/-1;color:#777;font-size:.75rem;min-height:1.1em}
+    @media(max-width:700px){
+      .tool-form{grid-template-columns:1fr}
+      .full,.tool-actions,.preview,.copy-status{grid-column:auto}
+      .tool-actions{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="tool-shell">
+    <div class="tool-wrap">
+      <a class="brand" href="../">jayy.wav</a>
+      <p class="eyebrow">INTERNAL MESSAGE BUILDER</p>
+      <h1>STUDIO<br>CONFIRMED.</h1>
+      <p class="tool-note">Use this after a studio confirms availability. For same-day clients, tap SAME-DAY MODE to auto-fill today’s date. Nothing entered here is stored or uploaded.</p>
+
+      <div class="mode-row">
+        <button class="mode-btn active" id="standardMode" type="button">STANDARD</button>
+        <button class="mode-btn" id="sameDayMode" type="button">SAME-DAY MODE</button>
+      </div>
+
+      <form class="tool-form" id="confirmBuilder">
+        <label><span>Client phone</span><input id="clientPhone" type="tel" placeholder="6785551234"></label>
+        <label><span>Client / artist name</span><input id="clientName" type="text" required placeholder="Artist name"></label>
+
+        <label><span>Studio / room</span><input id="studioName" type="text" required placeholder="Loudhouse — Room A"></label>
+        <label><span>Session package</span>
+          <select id="sessionPackage" required>
+            <option value="">Choose</option>
+            <option>2 Hours — $160</option>
+            <option>3 Hours — $225</option>
+            <option>4 Hours — $300</option>
+          </select>
+        </label>
+
+        <label><span>Confirmed date</span><input id="confirmedDate" type="date" required></label>
+        <label><span>Confirmed start time</span><input id="confirmedTime" type="time" required></label>
+
+        <label class="full"><span>Room / pricing note</span><textarea id="extraNote" rows="3" placeholder="Example: Premium room upgrade +$40 total."></textarea></label>
+
+        <div class="preview">
+          <span>MESSAGE PREVIEW</span>
+          <pre id="messagePreview">Fill out the form to generate the confirmation message.</pre>
+        </div>
+
+        <div class="tool-actions">
+          <button class="btn" type="button" id="openTextBtn">OPEN TEXT</button>
+          <button class="btn btn-ghost" type="button" id="copyMessageBtn">COPY MESSAGE</button>
+        </div>
+
+        <div class="copy-status" id="copyStatus"></div>
+
+        <div class="tool-actions">
+          <a class="btn btn-ghost" href="https://www.instagram.com/_jayy.wav/" target="_blank" rel="noopener">OPEN INSTAGRAM</a>
+          <a class="btn btn-ghost" href="../session-confirmed/">VIEW DEPOSIT PAGE</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const depositPage = "https://jayywav.github.io/jayywav/session-confirmed/";
+    const form = document.getElementById("confirmBuilder");
+    const preview = document.getElementById("messagePreview");
+    const copyStatus = document.getElementById("copyStatus");
+    const standardMode = document.getElementById("standardMode");
+    const sameDayMode = document.getElementById("sameDayMode");
+
+    const clientPhone = document.getElementById("clientPhone");
+    const clientName = document.getElementById("clientName");
+    const studioName = document.getElementById("studioName");
+    const sessionPackage = document.getElementById("sessionPackage");
+    const confirmedDate = document.getElementById("confirmedDate");
+    const confirmedTime = document.getElementById("confirmedTime");
+    const extraNote = document.getElementById("extraNote");
+
+    const todayISO = () => {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,"0");
+      const day = String(d.getDate()).padStart(2,"0");
+      return `${y}-${m}-${day}`;
+    };
+
+    const fmtDate = v => {
+      if (!v) return "[DATE]";
+      const [y,m,d] = v.split("-");
+      return `${m}/${d}/${y}`;
+    };
+
+    const fmtTime = v => {
+      if (!v) return "[TIME]";
+      const [hh,mm] = v.split(":").map(Number);
+      const ap = hh >= 12 ? "PM" : "AM";
+      return `${hh % 12 || 12}:${String(mm).padStart(2,"0")} ${ap}`;
+    };
+
+    const buildMessage = () => {
+      const name = clientName.value.trim() || "[NAME]";
+      const studio = studioName.value.trim() || "[STUDIO / ROOM]";
+      const pkg = sessionPackage.value || "[SESSION PACKAGE]";
+      const date = fmtDate(confirmedDate.value);
+      const time = fmtTime(confirmedTime.value);
+      const note = extraNote.value.trim();
+
+      return [
+        `Hey ${name}, your studio availability is confirmed.`,
+        "",
+        `Location: ${studio}`,
+        `Session: ${pkg}`,
+        `Date: ${date}`,
+        `Start time: ${time}`,
+        note ? `Note: ${note}` : "",
+        "",
+        "When you're ready, use the link below to submit the $100 session deposit and lock it in:",
+        depositPage,
+        "",
+        "Your session is locked in after the deposit is paid. Extensions are $80/hr and subject to studio availability."
+      ].filter(Boolean).join("\n");
+    };
+
+    const refreshPreview = () => {
+      preview.textContent = buildMessage();
+      copyStatus.textContent = "";
+    };
+
+    form.addEventListener("input", refreshPreview);
+    form.addEventListener("change", refreshPreview);
+
+    sameDayMode.addEventListener("click", () => {
+      confirmedDate.value = todayISO();
+      sameDayMode.classList.add("active");
+      standardMode.classList.remove("active");
+      refreshPreview();
+    });
+
+    standardMode.addEventListener("click", () => {
+      standardMode.classList.add("active");
+      sameDayMode.classList.remove("active");
+    });
+
+    document.getElementById("openTextBtn").addEventListener("click", () => {
+      const phone = clientPhone.value.replace(/\D/g,"");
+      if (!phone) {
+        copyStatus.textContent = "Enter the client’s phone number first.";
+        clientPhone.focus();
+        return;
+      }
+      window.location.href = `sms:${phone}?&body=${encodeURIComponent(buildMessage())}`;
+    });
+
+    document.getElementById("copyMessageBtn").addEventListener("click", async () => {
+      const msg = buildMessage();
+      try {
+        await navigator.clipboard.writeText(msg);
+        copyStatus.textContent = "Message copied — paste it into Instagram DM or anywhere else.";
+      } catch {
+        const temp = document.createElement("textarea");
+        temp.value = msg;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+        copyStatus.textContent = "Message copied.";
+      }
+    });
+
+    refreshPreview();
+  </script>
+</body>
+</html>
