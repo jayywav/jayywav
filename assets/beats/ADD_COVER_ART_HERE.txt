@@ -1,0 +1,3 @@
+Optional: put beat cover images in this folder.
+Then set each beat's `cover` value in script.js, for example:
+cover: "assets/beats/my-cover.jpg"
