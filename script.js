@@ -1,6 +1,6 @@
 const CONFIG = {
   bookingUrl: "#request",
-  mixMasterUrl: "",
+  mixMasterUrl: "https://square.link/u/6OzDqc5p",
 
   // Edit these 10 beats however you want.
   // Put tagged MP3 previews in assets/audio/
