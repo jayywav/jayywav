@@ -9,7 +9,7 @@ const CONFIG = {
     {
       id: "beat1",
       title: "goodmemories [fatt smaxk, fila] 148 (@_jayy.wav x @dracobeats)",
-      producer: "@_jayy.wav x @dracobeats",
+      producer: "jayy.wav x dracobeats",
       bpm: "148",
       key: "C min",
       price: "$50",
@@ -32,99 +32,99 @@ const CONFIG = {
     },
     {
       id: "beat3",
-      title: "Beat Title 03",
+      title: "lemon chicken [fila, female atl] 150 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "128",
-      key: "A MIN",
+      bpm: "150",
+      key: "B maj",
       price: "$50",
       audio: "assets/audio/beat-03-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/IxpMB",
+      licenseUrls: { mp3: "https://payhip.com/b/IxpMB", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat4",
-      title: "Beat Title 04",
-      producer: "jayy.wav",
-      bpm: "145",
-      key: "D MIN",
+      title: "glue [ysl] 138 (@rioleyva x @_jayy.wav)",
+      producer: "jayy.wav x rio leyva",
+      bpm: "138",
+      key: "Db min",
       price: "$50",
       audio: "assets/audio/beat-04-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/woLAx",
+      licenseUrls: { mp3: "https://payhip.com/b/woLAx", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat5",
-      title: "Beat Title 05",
+      title: "methods [melodic] 150 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "136",
-      key: "G MIN",
+      bpm: "150",
+      key: "G maj",
       price: "$50",
       audio: "assets/audio/beat-05-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/S1ELx",
+      licenseUrls: { mp3: "https://payhip.com/b/S1ELx", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat6",
-      title: "Beat Title 06",
+      title: "[fatt smaxk,baby drill] bell blvd 153 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "150",
-      key: "E MIN",
+      bpm: "153",
+      key: "F maj",
       price: "$50",
       audio: "assets/audio/beat-06-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/GcMfI",
+      licenseUrls: { mp3: "https://payhip.com/b/GcMfI", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat7",
-      title: "Beat Title 07",
-      producer: "jayy.wav",
-      bpm: "132",
-      key: "B MIN",
+      title: "save ur moments [ambient, plugg, wobble] 140 (@_jayy.wav x soldmags)",
+      producer: "jayy.wav x soldmags",
+      bpm: "140",
+      key: "C maj",
       price: "$50",
       audio: "assets/audio/beat-07-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/Qx5ad",
+      licenseUrls: { mp3: "https://payhip.com/b/Qx5ad", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat8",
-      title: "Beat Title 08",
+      title: "mombon [plugg, underground] 138 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "158",
-      key: "F# MIN",
+      bpm: "138",
+      key: "F maj",
       price: "$50",
       audio: "assets/audio/beat-08-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/62Z4J",
+      licenseUrls: { mp3: "https://payhip.com/b/62Z4J", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat9",
-      title: "Beat Title 09",
+      title: "chrome coast [ambient, rylo, lucki] 150 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "124",
-      key: "C MIN",
+      bpm: "150",
+      key: "C maj",
       price: "$50",
       audio: "assets/audio/beat-09-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/6TQcy",
+      licenseUrls: { mp3: "https://payhip.com/b/6TQcy", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat10",
-      title: "Beat Title 10",
+      title: "back on campus [ambient trap] 133 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "142",
-      key: "A# MIN",
+      bpm: "133",
+      key: "D maj",
       price: "$50",
       audio: "assets/audio/beat-10-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/nd8Qk",
+      licenseUrls: { mp3: "https://payhip.com/b/nd8Qk", wav: "", trackouts: "", unlimited: "" }
     }
   ]
 };
