@@ -8,10 +8,10 @@ const CONFIG = {
   beats: [
     {
       id: "beat1",
-      title: "vennie [plugg]",
-      producer: "@_jayy.wav",
-      bpm: "151",
-      key: "—",
+      title: "goodmemories [fatt smaxk, fila] 148 (@_jayy.wav x @dracobeats)",
+      producer: "@_jayy.wav x @dracobeats",
+      bpm: "148",
+      key: "C min",
       price: "$50",
       audio: "assets/audio/beat-01-preview.mp3",
       cover: "",
@@ -20,15 +20,15 @@ const CONFIG = {
     },
     {
       id: "beat2",
-      title: "Beat Title 02",
+      title: "illegal formation [plugg, fila] 150 (@_jayy.wav)",
       producer: "jayy.wav",
-      bpm: "152",
-      key: "F MIN",
+      bpm: "150",
+      key: "D maj",
       price: "$50",
       audio: "assets/audio/beat-02-preview.mp3",
       cover: "",
-      leaseUrl: "",
-      licenseUrls: { mp3: "", wav: "", trackouts: "", unlimited: "" }
+      leaseUrl: "https://payhip.com/b/MQz0T",
+      licenseUrls: { mp3: "https://payhip.com/b/MQz0T", wav: "", trackouts: "", unlimited: "" }
     },
     {
       id: "beat3",
