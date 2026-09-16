@@ -439,16 +439,51 @@ const copyRequestText = async message => {
 };
 
 if (sessionRequestForm) {
-  sessionRequestForm.addEventListener("submit", e => {
+  sessionRequestForm.addEventListener("submit", async e => {
     e.preventDefault();
 
     if (!sessionRequestForm.reportValidity()) return;
 
+    const submitBtn = sessionRequestForm.querySelector('button[type="submit"]');
     const message = buildSessionRequest();
-    requestPreview.textContent = message;
-    requestReady.hidden = false;
+    const formData = new FormData(sessionRequestForm);
+
+    formData.append("message", message);
+    formData.append("_subject", "New Session Request — jayy.wav");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "SENDING...";
     requestStatus.textContent = "";
-    requestReady.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    try {
+      const response = await fetch(CONFIG.sessionRequestUrl, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      requestPreview.textContent = message;
+      requestReady.hidden = false;
+      requestStatus.textContent =
+        "REQUEST SENT — I’ll contact you after checking studio availability.";
+
+      sessionRequestForm.reset();
+
+      requestReady.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    } catch (error) {
+      requestStatus.textContent =
+        "The request couldn’t be sent. Please use Text or Instagram below.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "SEND SESSION REQUEST";
+    }
   });
 }
 
