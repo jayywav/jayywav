@@ -473,17 +473,18 @@ if (sessionRequestForm) {
   throw new Error(details);
 }
 
-      requestPreview.textContent = message;
-      requestReady.hidden = false;
-      requestStatus.textContent =
-        "REQUEST SENT — I’ll contact you after checking studio availability.";
+     sessionRequestForm.querySelector(".form-grid").hidden = true;
+sessionRequestForm.querySelector(".request-disclaimer").hidden = true;
+sessionRequestForm.querySelector(".request-actions-primary").hidden = true;
 
-      sessionRequestForm.reset();
+requestStatus.textContent = "";
+requestReady.hidden = false;
+sessionRequestForm.reset();
 
-      requestReady.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
+requestReady.scrollIntoView({
+  behavior: "smooth",
+  block: "center"
+});
 } catch (error) {
   console.error("Session request failed:", error);
 
