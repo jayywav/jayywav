@@ -1,6 +1,7 @@
 const CONFIG = {
   bookingUrl: "#request",
   mixMasterUrl: "https://square.link/u/6OzDqc5p",
+  sessionRequestUrl: "https://formspree.io/f/xbglrkey",
 
   // Edit these 10 beats however you want.
   // Put tagged MP3 previews in assets/audio/
