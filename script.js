@@ -473,9 +473,9 @@ if (sessionRequestForm) {
   throw new Error(details);
 }
 
-     sessionRequestForm.querySelector(".form-grid").hidden = true;
-sessionRequestForm.querySelector(".request-disclaimer").hidden = true;
-sessionRequestForm.querySelector(".request-actions-primary").hidden = true;
+    sessionRequestForm.querySelector(".form-grid").style.display = "none";
+sessionRequestForm.querySelector(".request-disclaimer").style.display = "none";
+sessionRequestForm.querySelector(".request-actions-primary").style.display = "none";
 
 requestStatus.textContent = "";
 requestReady.hidden = false;
