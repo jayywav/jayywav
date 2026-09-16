@@ -464,7 +464,14 @@ if (sessionRequestForm) {
         }
       });
 
-      if (!response.ok) throw new Error("Request failed");
+     if (!response.ok) {
+  const result = await response.json().catch(() => ({}));
+  const details =
+    result.errors?.map(error => error.message).join(", ") ||
+    `Formspree returned error ${response.status}`;
+
+  throw new Error(details);
+}
 
       requestPreview.textContent = message;
       requestReady.hidden = false;
@@ -477,10 +484,12 @@ if (sessionRequestForm) {
         behavior: "smooth",
         block: "nearest"
       });
-    } catch (error) {
-      requestStatus.textContent =
-        "The request couldn’t be sent. Please use Text or Instagram below.";
-    } finally {
+} catch (error) {
+  console.error("Session request failed:", error);
+
+  requestStatus.textContent =
+    `The request couldn’t be sent: ${error.message}`;
+} finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "SEND SESSION REQUEST";
     }
